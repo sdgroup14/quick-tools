@@ -1,0 +1,23 @@
+<div class="w-full max-w-4xl bg-white dark:bg-gray-800 p-6 rounded-lg shadow space-y-4">
+    <h2 class="text-xl font-bold">🔁 JSON ⇄ CSV Converter</h2>
+
+    <div class="flex flex-wrap gap-4">
+        <button (click)="mode = 'jsonToCsv'" class="px-4 py-2 rounded text-white font-semibold" [ngClass]="mode === 'jsonToCsv' ? 'bg-blue-600' : 'bg-gray-500'">JSON → CSV</button>
+        <button (click)="mode = 'csvToJson'" class="px-4 py-2 rounded text-white font-semibold" [ngClass]="mode === 'csvToJson' ? 'bg-blue-600' : 'bg-gray-500'">CSV → JSON</button>
+        <button (click)="clear()" class="px-4 py-2 rounded bg-red-500 hover:bg-red-600 text-white font-semibold">🧹 Clear</button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex flex-col">
+            <label class="mb-1 font-medium">Input:</label>
+            <textarea [(ngModel)]="input" rows="10" class="p-2 rounded border dark:bg-gray-700 dark:border-gray-600 resize-y"></textarea>
+        </div>
+        <div class="flex flex-col">
+            <label class="mb-1 font-medium">Output:</label>
+            <textarea [value]="output" readonly rows="10" class="p-2 rounded border dark:bg-gray-700 dark:border-gray-600 resize-y"></textarea>
+            <button (click)="copy()" class="mt-2 bg-green-600 hover:bg-green-700 text-white py-1 px-3 rounded self-end">📋 Copy</button>
+        </div>
+    </div>
+
+    <button (click)="convert()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded">🔄 Convert</button>
+</div>

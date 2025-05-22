@@ -1,0 +1,15 @@
+<div class="w-full max-w-3xl bg-white dark:bg-gray-800 p-6 rounded-lg shadow space-y-4">
+    <h2 class="text-xl font-bold">📄 Lorem Ipsum Generator</h2>
+
+    <div class="flex items-center gap-4 flex-wrap">
+        <label class="font-medium">Paragraphs:</label>
+        <input type="number" [(ngModel)]="paragraphs" min="1" max="20" class="w-20 p-2 rounded border dark:bg-gray-700 dark:border-gray-600" />
+        <button (click)="generate()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded font-semibold">➕ Generate</button>
+        <button (click)="clear()" class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded font-semibold">🧹 Clear</button>
+    </div>
+
+    <div *ngIf="output" class="space-y-4">
+        <textarea readonly [value]="output" rows="10" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"></textarea>
+        <button (click)="copy()" class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">📋 Copy</button>
+    </div>
+</div>

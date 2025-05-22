@@ -1,0 +1,36 @@
+<div class="w-full max-w-xl bg-white dark:bg-gray-800 p-6 rounded-lg shadow space-y-6">
+    <h2 class="text-xl font-bold">✅ Email & URL Validator</h2>
+
+    <div class="space-y-2">
+        <label class="block font-medium">Email:</label>
+        <input
+                [(ngModel)]="email"
+                placeholder="example@email.com"
+                type="text"
+                class="w-full p-2 rounded border dark:bg-gray-700 dark:border-gray-600"
+        />
+        <div *ngIf="isEmailValid !== null" [ngClass]="isEmailValid ? 'text-green-600' : 'text-red-500'">
+            {{ isEmailValid ? '✔️ Valid email' : '❌ Invalid email' }}
+        </div>
+    </div>
+
+    <div class="space-y-2">
+        <label class="block font-medium">URL:</label>
+        <input
+                [(ngModel)]="url"
+                placeholder="https://example.com"
+                type="text"
+                class="w-full p-2 rounded border dark:bg-gray-700 dark:border-gray-600"
+        />
+        <div *ngIf="isUrlValid !== null" [ngClass]="isUrlValid ? 'text-green-600' : 'text-red-500'">
+            {{ isUrlValid ? '✔️ Valid URL' : '❌ Invalid URL' }}
+        </div>
+    </div>
+
+    <button
+            (click)="clear()"
+            class="mt-4 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded"
+    >
+        🧹 Clear
+    </button>
+</div>

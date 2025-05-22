@@ -1,0 +1,21 @@
+<form [formGroup]="form" (ngSubmit)="generateUrl()" class="w-full max-w-xl bg-white dark:bg-gray-800 shadow p-6 rounded-lg space-y-4">
+    <div class="space-y-1">
+        <label class="block font-medium">Base URL</label>
+        <input type="text" formControlName="baseUrl" required class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" />
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div *ngFor="let field of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']" class="space-y-1">
+            <label class="block capitalize">{{ field.replace('utm_', 'UTM ') }}</label>
+            <input type="text" [formControlName]="field" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" />
+        </div>
+    </div>
+
+    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">🔗 Generate URL</button>
+</form>
+
+<div *ngIf="generatedUrl" class="mt-6 max-w-xl p-4 bg-gray-100 dark:bg-gray-700 rounded-lg space-y-2">
+    <p class="text-sm font-semibold">Generated URL:</p>
+    <p class="break-words">{{ generatedUrl }}</p>
+    <button (click)="copyToClipboard()" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">📋 Copy</button>
+</div>
