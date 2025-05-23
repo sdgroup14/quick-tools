@@ -1,0 +1,10 @@
+н{
+  "hosting": {
+    "public": "dist/quick-tools/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
