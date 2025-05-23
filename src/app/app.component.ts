@@ -1,25 +1,38 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { RouterOutlet, RouterModule } from '@angular/router';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterOutlet, RouterModule, NgIf, NgFor],
   template: `
       <div class="min-h-screen flex flex-col bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white">
           <header class="p-4 shadow bg-white dark:bg-gray-800">
               <div class="max-w-5xl mx-auto flex items-center justify-between">
                   <div class="text-2xl font-bold">🚀 QuickTools</div>
-                  <nav class="flex gap-4 text-sm">
-                      <a routerLink="/utm" routerLinkActive="text-blue-600" class="hover:underline">UTM Generator</a>
-                      <a routerLink="/password" routerLinkActive="text-blue-600" class="hover:underline">Password Generator</a>
-                      <a routerLink="/json-csv" routerLinkActive="text-blue-600" class="hover:underline">JSON ⇄ CSV</a>
-                      <a routerLink="/base64" routerLinkActive="text-blue-600" class="hover:underline">Base64</a>
-                      <a routerLink="/markdown" routerLinkActive="text-blue-600" class="hover:underline">Markdown</a>
-                      <a routerLink="/lorem" routerLinkActive="text-blue-600" class="hover:underline">Lorem</a>
-                      <a routerLink="/validators" routerLinkActive="text-blue-600" class="hover:underline">Validators</a>
 
+                  <!-- Desktop nav -->
+                  <nav class="hidden md:flex gap-4 text-sm">
+                      <a *ngFor="let link of links"
+                         [routerLink]="link.path"
+                         routerLinkActive="text-blue-600"
+                         class="hover:underline">{{ link.label }}</a>
                   </nav>
+
+                  <!-- Mobile toggle -->
+                  <button class="md:hidden text-xl" (click)="toggleMenu()">☰</button>
+              </div>
+
+              <!-- Mobile nav -->
+              <div *ngIf="menuOpen()" class="md:hidden mt-4 flex flex-col gap-2">
+                  <a *ngFor="let link of links"
+                     [routerLink]="link.path"
+                     routerLinkActive="text-blue-600"
+                     (click)="closeMenu()"
+                     class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">
+                      {{ link.label }}
+                  </a>
               </div>
           </header>
 
@@ -33,4 +46,24 @@ import { RouterModule } from '@angular/router';
       </div>
   `,
 })
-export class AppComponent {}
+export class AppComponent {
+  menuOpen = signal(false);
+
+  toggleMenu() {
+    this.menuOpen.update(v => !v);
+  }
+
+  closeMenu() {
+    this.menuOpen.set(false);
+  }
+
+  links = [
+    { path: '/utm', label: 'UTM Generator' },
+    { path: '/password', label: 'Password Generator' },
+    { path: '/json-csv', label: 'JSON ⇄ CSV' },
+    { path: '/base64', label: 'Base64' },
+    { path: '/markdown', label: 'Markdown' },
+    { path: '/lorem', label: 'Lorem Ipsum' },
+    { path: '/validators', label: 'Validators' },
+  ];
+}
