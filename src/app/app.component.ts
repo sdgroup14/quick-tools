@@ -10,7 +10,10 @@ import { NgIf, NgFor } from '@angular/common';
       <div class="min-h-screen flex flex-col bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white">
           <header class="p-4 shadow bg-white dark:bg-gray-800">
               <div class="max-w-5xl mx-auto flex items-center justify-between">
-                  <div class="text-2xl font-bold">🚀 QuickTools</div>
+                  <a routerLink="/" class="flex items-center gap-2">
+                      <img src="quicktools-logo.png" alt="QuickTools Logo" class="h-14" />
+                      <span class=" text-3xl">QuickTools</span>
+                  </a>
 
                   <!-- Desktop nav -->
                   <nav class="hidden md:flex gap-4 text-sm">
