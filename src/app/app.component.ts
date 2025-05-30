@@ -40,8 +40,13 @@ import { NgIf, NgFor } from '@angular/common';
               <router-outlet />
           </main>
 
-          <footer class="p-4 text-center text-sm bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400">
-              © 2025 QuickTools. All rights reserved.
+          <footer class="p-4 text-center text-sm bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 space-y-2">
+              <div>© 2025 QuickTools. All rights reserved.</div>
+              <div class="flex justify-center gap-4 text-xs">
+                  <a routerLink="/about" class="underline hover:text-blue-600">About</a>
+                  <a routerLink="/privacy" class="underline hover:text-blue-600">Privacy Policy</a>
+                  <a href="mailto:contact&#64;quicktools.tools" class="underline hover:text-blue-600">Contact</a>
+              </div>
           </footer>
       </div>
   `,
