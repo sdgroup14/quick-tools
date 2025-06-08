@@ -1,3 +1,24 @@
+<section class="prose max-w-3xl mx-auto my-6">
+    <h1>UTM URL Generator</h1>
+    <p>
+        UTM tags help you track the performance of your marketing campaigns. By appending parameters
+        <code>?utm_source=</code>, <code>utm_medium=</code> and <code>utm_campaign=</code> to any URL,
+        Google Analytics (or any analytics tool) will tell you exactly where your traffic came from.
+    </p>
+    <h2>How to use</h2>
+    <ol>
+        <li>Paste your base URL into the <strong>Base URL</strong> field.</li>
+        <li>Fill in <strong>UTM Source</strong>, <strong>Medium</strong> and <strong>Campaign</strong> (optional: Term, Content).</li>
+        <li>Click <em>Generate URL</em> and copy your new trackable link.</li>
+    </ol>
+    <h2>Why QuickTools UTM Generator?</h2>
+    <ul>
+        <li>100% client-side: no login, no data is stored on our servers.</li>
+        <li>Instant encoding ensures URLs are safe and correct.</li>
+        <li>Works offline after PWA installation.</li>
+    </ul>
+</section>
+
 <form [formGroup]="form" (ngSubmit)="generateUrl()" class="w-full max-w-xl bg-white dark:bg-gray-800 shadow p-6 rounded-lg space-y-4">
     <div class="space-y-1">
         <label class="block font-medium">Base URL</label>
