@@ -1,22 +1,42 @@
 <section class="prose max-w-3xl mx-auto my-6">
     <h1>UTM URL Generator</h1>
     <p>
-        UTM tags help you track the performance of your marketing campaigns. By appending parameters
-        <code>?utm_source=</code>, <code>utm_medium=</code> and <code>utm_campaign=</code> to any URL,
-        Google Analytics (or any analytics tool) will tell you exactly where your traffic came from.
+        In digital marketing, data is your compass. Without proper tracking, you cannot tell which channels
+        drive traffic, engagement, or conversions. UTM tags are query parameters appended to any URL that
+        enable analytics platforms (like Google Analytics or Matomo) to identify campaign source, medium,
+        and name. QuickTools UTM URL Generator automates this, providing marketers, developers, and
+        small-business owners with a no-code, client-side solution.
     </p>
-    <h2>How to use</h2>
-    <ol>
-        <li>Paste your base URL into the <strong>Base URL</strong> field.</li>
-        <li>Fill in <strong>UTM Source</strong>, <strong>Medium</strong> and <strong>Campaign</strong> (optional: Term, Content).</li>
-        <li>Click <em>Generate URL</em> and copy your new trackable link.</li>
-    </ol>
-    <h2>Why QuickTools UTM Generator?</h2>
+    <h2>Benefits</h2>
     <ul>
-        <li>100% client-side: no login, no data is stored on our servers.</li>
-        <li>Instant encoding ensures URLs are safe and correct.</li>
-        <li>Works offline after PWA installation.</li>
+        <li><strong>Privacy-first:</strong> everything runs in your browser; no data is sent to our servers.</li>
+        <li><strong>Minimal interface:</strong> just a few fields and one button to generate a fully encoded URL.</li>
+        <li><strong>Built-in validation:</strong> detects malformed base URLs before you generate tags.</li>
+        <li><strong>Offline support:</strong> works as a PWA once installed, so you can generate links anywhere.</li>
     </ul>
+    <h2>How It Works</h2>
+    <ol>
+        <li>Enter your <strong>Base URL</strong> (for example, <code>https://example.com/page</code>).</li>
+        <li>Fill in <strong>UTM Source</strong>, <strong>Medium</strong>, and <strong>Campaign</strong>. Optionally add <strong>Term</strong> and <strong>Content</strong>.</li>
+        <li>Click <em>Generate URL</em> and copy the fully-formed link with UTM parameters.</li>
+    </ol>
+    <h2>Use Cases</h2>
+    <p>
+        • Email newsletters (<code>?utm_source=newsletter&utm_medium=email</code>)<br>
+        • Social media campaigns (<code>?utm_source=facebook&utm_medium=social</code>)<br>
+        • Paid search ads (<code>?utm_source=google&utm_medium=cpc&utm_campaign=spring_sale</code>)<br>
+        • Affiliate links and banners.
+    </p>
+    <h2>Optimization Tips</h2>
+    <ul>
+        <li>Use consistent, lowercase keys without spaces.</li>
+        <li>Maintain identical parameter naming across reports.</li>
+        <li>Create templates for recurring campaigns.</li>
+    </ul>
+    <p>
+        With QuickTools UTM URL Generator, you gain full visibility into your marketing performance.
+        Generate trackable links in seconds—no server, no signup, no data retention.
+    </p>
 </section>
 
 <form [formGroup]="form" (ngSubmit)="generateUrl()" class="w-full max-w-xl bg-white dark:bg-gray-800 shadow p-6 rounded-lg space-y-4">
