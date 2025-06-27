@@ -1,0 +1,5 @@
+<div class="max-w-3xl mx-auto p-6 prose">
+    <h1>{{ post?.title }}</h1>
+    <p class="text-sm text-gray-400">{{ post?.published }}</p>
+    <div [innerHTML]="post?.content"></div>
+</div>

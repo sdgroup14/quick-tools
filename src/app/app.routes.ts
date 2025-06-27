@@ -8,6 +8,8 @@ import {LoremComponent} from "./components/lorem/lorem.component";
 import {ValidatorsComponent} from "./components/validators/validators.component";
 import {AboutComponent} from "./components/about/about.component";
 import {PrivacyPolicyComponent} from "./components/privacy-policy/privacy-policy.component";
+import {BlogListComponent} from "./components/blog-list/blog-list.component";
+import {BlogPostComponent} from "./components/blog-post/blog-post.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: 'utm', pathMatch: 'full' },
@@ -20,5 +22,7 @@ export const routes: Routes = [
   { path: 'validators', component: ValidatorsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'privacy', component: PrivacyPolicyComponent },
+  { path: 'blog', component: BlogListComponent },
+  { path: 'blog/:slug', component: BlogPostComponent },
 ];
 

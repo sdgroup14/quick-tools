@@ -73,5 +73,6 @@ export class AppComponent {
     { path: '/markdown', label: 'Markdown' },
     { path: '/lorem', label: 'Lorem Ipsum' },
     { path: '/validators', label: 'Validators' },
+    { path: '/blog', label: 'Blog' },
   ];
 }

@@ -1,0 +1,9 @@
+<div class="max-w-3xl mx-auto p-6 space-y-4">
+    <h1 class="text-3xl font-bold">Blog</h1>
+    <div *ngFor="let post of posts">
+        <a [routerLink]="['/blog', post.slug]" class="text-xl text-blue-500 hover:underline">
+            {{ post.title }}
+        </a>
+        <p class="text-sm text-gray-400">{{ post.published }}</p>
+    </div>
+</div>
